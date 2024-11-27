@@ -20,5 +20,4 @@ jobs:
       - name: Check directory
         run: dir
 
-      - name: Build Solution
-        run: msbuild ./PhysicsGame.sln /p:Configuration=Release
+
