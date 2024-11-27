@@ -1,16 +1,21 @@
-name: test
+#define workflow name
+name: Test
 
+#event
 on:
   push:
     branches:
     - main
-
-jobs:
-  job:
-    runs-on: ubuntu-latest
-
+#steps to do during the action, with different sub-steps --> different functions each
+jobs: 
+  build:
+    runs-on: windows_latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4.2.2
-    - name: Test
-      run: ls
+      - name: Checkout repository
+        uses: actions/checkout@v3
+    
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Check directory
+        run: dir
