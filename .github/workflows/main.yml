@@ -1,0 +1,24 @@
+#define workflow name
+name: Build
+
+#event
+on:
+  push:
+    branches:
+    - main
+#steps to do during the action, with different sub-steps --> different functions each
+jobs: 
+  build:
+    runs-on: windows_latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+    
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Check directory
+        run: dir
+
+      - name: Build Solution
+        run: msbuild ./PhysicsGame.sln /p:Configuration=Release
