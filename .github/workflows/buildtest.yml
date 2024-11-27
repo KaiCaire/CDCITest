@@ -1,5 +1,5 @@
 #define workflow name
-name: Build
+name: Test
 
 #event
 on:
