@@ -9,7 +9,7 @@ on:
 #steps to do during the action, with different sub-steps --> different functions each
 jobs: 
   build:
-    runs-on: windows_latest
+    runs-on: ubuntu_latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
